@@ -9,7 +9,8 @@ interface LocationModalProps {
   onClose: () => void;
 }
 
-const CATEGORIES = ['All', 'IIT', 'NIT', 'IIIT', 'Central', 'State', 'Private', 'Medical'] as const;
+const CATEGORIES = ['All', 'Degree', 'IIT', 'NIT', 'IIIT', 'Central', 'State', 'Private', 'Medical'] as const;
+
 
 export function LocationModal({ onClose }: LocationModalProps) {
   const { selectedCampus, setSelectedCampus, setCampusLocation } = useApp();

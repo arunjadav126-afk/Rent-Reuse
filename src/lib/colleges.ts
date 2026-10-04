@@ -3,10 +3,82 @@ export interface IndianCollege {
   shortName: string;
   state: string;
   city: string;
-  category: 'IIT' | 'NIT' | 'IIIT' | 'Central' | 'State' | 'Medical' | 'Management' | 'Private';
+  category: 'IIT' | 'NIT' | 'IIIT' | 'Central' | 'State' | 'Medical' | 'Management' | 'Private' | 'Degree';
 }
 
 export const ALL_INDIAN_COLLEGES: IndianCollege[] = [
+  // ==============================================================================
+  // HYDERABAD & TELANGANA COLLEGES (ENGINEERING, DEGREE, MEDICAL, COMMERCE, LAW)
+  // ==============================================================================
+
+  // --- Hyderabad Premier & Universities ---
+  { name: 'Indian Institute of Technology Hyderabad (IIT Hyderabad)', shortName: 'IITH', city: 'Hyderabad', state: 'Telangana', category: 'IIT' },
+  { name: 'International Institute of Information Technology Hyderabad (IIIT Hyderabad)', shortName: 'IIITH', city: 'Hyderabad', state: 'Telangana', category: 'IIIT' },
+  { name: 'BITS Pilani Hyderabad Campus', shortName: 'BITS Hyd', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'University of Hyderabad (HCU / Central University)', shortName: 'HCU', city: 'Hyderabad', state: 'Telangana', category: 'Central' },
+  { name: 'Osmania University (Main Campus)', shortName: 'OU Hyderabad', city: 'Hyderabad', state: 'Telangana', category: 'State' },
+  { name: 'Jawaharlal Nehru Technological University Hyderabad (JNTUH)', shortName: 'JNTUH', city: 'Hyderabad', state: 'Telangana', category: 'State' },
+
+  // --- Hyderabad Prominent Degree & Arts / Science / Commerce Colleges ---
+  { name: 'Nizam College (Osmania University), Basheerbagh', shortName: 'Nizam College', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'Loyola Academy Degree & PG College, Secunderabad', shortName: 'Loyola Academy', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'St. Francis College for Women, Begumpet', shortName: 'St. Francis', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'St. Ann\'s College for Women, Mehdipatnam', shortName: 'St. Ann\'s Degree', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'Badruka College of Commerce & Arts, Kachiguda', shortName: 'Badruka College', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'Bhavan\'s Vivekananda College of Science, Humanities & Commerce, Sainikpuri', shortName: 'Bhavan\'s Sainikpuri', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'St. Joseph\'s Degree & PG College, King Koti', shortName: 'St. Joseph\'s Degree', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'Avinash College of Commerce, Hyderabad', shortName: 'ACC Hyderabad', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'Villa Marie Degree College for Women, Somajiguda', shortName: 'Villa Marie', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'RBVRR Women\'s College, Narayanaguda', shortName: 'RBVRR College', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'A.V. College of Arts, Science & Commerce (Domalguda)', shortName: 'AV College', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'Government City College Hyderabad, Nayapul', shortName: 'City College', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'Kasturba Gandhi Degree & PG College for Women, Secunderabad', shortName: 'Kasturba Degree', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'Pragati Mahavidyalaya Degree & PG College, Hanuman Tekdi', shortName: 'Pragati College', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'Wesley Degree College, Secunderabad', shortName: 'Wesley Degree', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'Anwar-ul-Uloom Degree & PG College, Mallepally', shortName: 'Anwar-ul-Uloom', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'Little Flower Degree College, Uppal', shortName: 'Little Flower', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'Tapasya College of Commerce & Management', shortName: 'Tapasya College', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'Aurora\'s Degree & PG College, Chikkadpally', shortName: 'Aurora Degree', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'Jagruti Degree & PG College, Narayanaguda', shortName: 'Jagruti Degree', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+  { name: 'Indian Institute of Management and Commerce (IIMC), Khairatabad', shortName: 'IIMC Khairatabad', city: 'Hyderabad', state: 'Telangana', category: 'Degree' },
+
+  // --- Hyderabad Engineering Colleges ---
+  { name: 'Chaitanya Bharathi Institute of Technology (CBIT), Gandipet', shortName: 'CBIT', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'Vasavi College of Engineering (VCE), Ibrahimbagh', shortName: 'Vasavi VCE', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'VNR Vignana Jyothi Institute of Engineering & Tech (VNRVJIET), Bachupally', shortName: 'VNR VJIET', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'Gokaraju Rangaraju Institute of Engineering & Tech (GRIET), Bachupally', shortName: 'GRIET', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'Muffakham Jah College of Engineering & Technology (MJCET), Banjara Hills', shortName: 'MJCET', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'BVRIT Hyderabad College of Engineering for Women, Bachupally', shortName: 'BVRITH', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'Vardhaman College of Engineering, Shamshabad', shortName: 'Vardhaman', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'Sreenidhi Institute of Science and Technology (SNIST), Ghatkesar', shortName: 'SNIST', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'CVR College of Engineering, Ibrahimpatnam', shortName: 'CVR', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'Keshav Memorial Institute of Technology (KMIT), Narayanaguda', shortName: 'KMIT', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'Matrusri Engineering College, Saidabad', shortName: 'Matrusri', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'Stanley College of Engineering & Technology for Women, Abids', shortName: 'Stanley Women\'s', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'CMR College of Engineering & Technology (CMRCET / MRCET), Medchal', shortName: 'CMR Group', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'Malla Reddy Engineering College (MREC / MRCET), Maisammaguda', shortName: 'Malla Reddy', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'Anurag University (formerly CVSR College of Engineering), Venkatapur', shortName: 'Anurag Univ', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'Geethanjali College of Engineering and Technology (GCET), Keesara', shortName: 'GCET Hyd', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'Guru Nanak Institutions Technical Campus (GNITC), Ibrahimpatnam', shortName: 'GNITC', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'MLR Institute of Technology (MLRIT), Dundigal', shortName: 'MLRIT', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'Deccan College of Engineering and Technology, Darussalam', shortName: 'Deccan Engg', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'Mahindra University (Ecole Centrale), Bahadurpally', shortName: 'Mahindra Univ', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'Woxsen University, Hyderabad', shortName: 'Woxsen', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
+  { name: 'ICFAI Foundation for Higher Education (IBS Hyderabad), Shankarpalli', shortName: 'IBS Hyderabad', city: 'Hyderabad', state: 'Telangana', category: 'Management' },
+
+  // --- Hyderabad Medical & Pharmacy & Law Institutions ---
+  { name: 'Osmania Medical College (OMC), Koti', shortName: 'OMC Hyderabad', city: 'Hyderabad', state: 'Telangana', category: 'Medical' },
+  { name: 'Gandhi Medical College (GMC), Secunderabad', shortName: 'Gandhi Med', city: 'Hyderabad', state: 'Telangana', category: 'Medical' },
+  { name: 'ESIC Medical College & Hospital, Sanathnagar', shortName: 'ESIC Hyd', city: 'Hyderabad', state: 'Telangana', category: 'Medical' },
+  { name: 'Deccan College of Medical Sciences (DCMS), Kanchanbagh', shortName: 'DCMS', city: 'Hyderabad', state: 'Telangana', category: 'Medical' },
+  { name: 'Apollo Institute of Medical Sciences & Research (AIMSR), Jubilee Hills', shortName: 'Apollo Medical', city: 'Hyderabad', state: 'Telangana', category: 'Medical' },
+  { name: 'NALSAR University of Law, Shamirpet', shortName: 'NALSAR', city: 'Hyderabad', state: 'Telangana', category: 'Central' },
+  { name: 'National Institute of Pharmaceutical Education & Research (NIPER Hyderabad)', shortName: 'NIPER Hyd', city: 'Hyderabad', state: 'Telangana', category: 'Central' },
+
+  // ==============================================================================
+  // PAN-INDIA PREMIER INSTITUTES (IITs, NITs, IIITs, UNIVERSITIES & COLLEGES)
+  // ==============================================================================
+
   // --- IITs ---
   { name: 'Indian Institute of Technology Bombay (IIT Bombay)', shortName: 'IITB', city: 'Mumbai', state: 'Maharashtra', category: 'IIT' },
   { name: 'Indian Institute of Technology Delhi (IIT Delhi)', shortName: 'IITD', city: 'New Delhi', state: 'Delhi', category: 'IIT' },
@@ -15,21 +87,11 @@ export const ALL_INDIAN_COLLEGES: IndianCollege[] = [
   { name: 'Indian Institute of Technology Kanpur (IIT Kanpur)', shortName: 'IITK', city: 'Kanpur', state: 'Uttar Pradesh', category: 'IIT' },
   { name: 'Indian Institute of Technology Roorkee (IIT Roorkee)', shortName: 'IITR', city: 'Roorkee', state: 'Uttarakhand', category: 'IIT' },
   { name: 'Indian Institute of Technology Guwahati (IIT Guwahati)', shortName: 'IITG', city: 'Guwahati', state: 'Assam', category: 'IIT' },
-  { name: 'Indian Institute of Technology Hyderabad (IIT Hyderabad)', shortName: 'IITH', city: 'Sangareddy', state: 'Telangana', category: 'IIT' },
   { name: 'Indian Institute of Technology (BHU) Varanasi', shortName: 'IIT BHU', city: 'Varanasi', state: 'Uttar Pradesh', category: 'IIT' },
   { name: 'Indian Institute of Technology Indore (IIT Indore)', shortName: 'IITI', city: 'Indore', state: 'Madhya Pradesh', category: 'IIT' },
   { name: 'Indian Institute of Technology Gandhinagar (IIT Gandhinagar)', shortName: 'IITGN', city: 'Gandhinagar', state: 'Gujarat', category: 'IIT' },
   { name: 'Indian Institute of Technology Ropar (IIT Ropar)', shortName: 'IITRPR', city: 'Rupnagar', state: 'Punjab', category: 'IIT' },
   { name: 'Indian Institute of Technology Patna (IIT Patna)', shortName: 'IITP', city: 'Patna', state: 'Bihar', category: 'IIT' },
-  { name: 'Indian Institute of Technology Bhubaneswar', shortName: 'IITBBS', city: 'Bhubaneswar', state: 'Odisha', category: 'IIT' },
-  { name: 'Indian Institute of Technology Jodhpur', shortName: 'IITJ', city: 'Jodhpur', state: 'Rajasthan', category: 'IIT' },
-  { name: 'Indian Institute of Technology Mandi', shortName: 'IIT Mandi', city: 'Mandi', state: 'Himachal Pradesh', category: 'IIT' },
-  { name: 'Indian Institute of Technology Tirupati', shortName: 'IITTP', city: 'Tirupati', state: 'Andhra Pradesh', category: 'IIT' },
-  { name: 'Indian Institute of Technology Palakkad', shortName: 'IITPKD', city: 'Palakkad', state: 'Kerala', category: 'IIT' },
-  { name: 'Indian Institute of Technology Goa', shortName: 'IIT Goa', city: 'Ponda', state: 'Goa', category: 'IIT' },
-  { name: 'Indian Institute of Technology Jammu', shortName: 'IIT Jammu', city: 'Jammu', state: 'Jammu & Kashmir', category: 'IIT' },
-  { name: 'Indian Institute of Technology Dharwad', shortName: 'IIT Dharwad', city: 'Dharwad', state: 'Karnataka', category: 'IIT' },
-  { name: 'Indian Institute of Technology Bhilai', shortName: 'IIT Bhilai', city: 'Bhilai', state: 'Chhattisgarh', category: 'IIT' },
 
   // --- NITs ---
   { name: 'National Institute of Technology Tiruchirappalli (NIT Trichy)', shortName: 'NITT', city: 'Tiruchirappalli', state: 'Tamil Nadu', category: 'NIT' },
@@ -40,93 +102,18 @@ export const ALL_INDIAN_COLLEGES: IndianCollege[] = [
   { name: 'Visvesvaraya National Institute of Technology Nagpur (VNIT)', shortName: 'VNIT', city: 'Nagpur', state: 'Maharashtra', category: 'NIT' },
   { name: 'Malaviya National Institute of Technology Jaipur (MNIT)', shortName: 'MNIT', city: 'Jaipur', state: 'Rajasthan', category: 'NIT' },
   { name: 'National Institute of Technology Calicut (NITC)', shortName: 'NITC', city: 'Kozhikode', state: 'Kerala', category: 'NIT' },
-  { name: 'National Institute of Technology Kurukshetra', shortName: 'NITKKR', city: 'Kurukshetra', state: 'Haryana', category: 'NIT' },
-  { name: 'National Institute of Technology Durgapur', shortName: 'NITDGP', city: 'Durgapur', state: 'West Bengal', category: 'NIT' },
-  { name: 'National Institute of Technology Silchar', shortName: 'NITS', city: 'Silchar', state: 'Assam', category: 'NIT' },
-  { name: 'Sardar Vallabhbhai National Institute of Technology Surat (SVNIT)', shortName: 'SVNIT', city: 'Surat', state: 'Gujarat', category: 'NIT' },
-  { name: 'National Institute of Technology Meghalaya', shortName: 'NITM', city: 'Shillong', state: 'Meghalaya', category: 'NIT' },
-  { name: 'National Institute of Technology Raipur', shortName: 'NITRR', city: 'Raipur', state: 'Chhattisgarh', category: 'NIT' },
-  { name: 'National Institute of Technology Agartala', shortName: 'NITA', city: 'Agartala', state: 'Tripura', category: 'NIT' },
-  { name: 'National Institute of Technology Patna', shortName: 'NITP', city: 'Patna', state: 'Bihar', category: 'NIT' },
-  { name: 'Dr. B.R. Ambedkar National Institute of Technology Jalandhar', shortName: 'NITJ', city: 'Jalandhar', state: 'Punjab', category: 'NIT' },
-  { name: 'National Institute of Technology Goa', shortName: 'NITG', city: 'Ponda', state: 'Goa', category: 'NIT' },
-  { name: 'National Institute of Technology Puducherry', shortName: 'NITPY', city: 'Karaikal', state: 'Puducherry', category: 'NIT' },
-  { name: 'National Institute of Technology Uttarakhand', shortName: 'NITUK', city: 'Srinagar', state: 'Uttarakhand', category: 'NIT' },
-  { name: 'National Institute of Technology Mizoram', shortName: 'NITMZ', city: 'Aizawl', state: 'Mizoram', category: 'NIT' },
-  { name: 'National Institute of Technology Nagaland', shortName: 'NITN', city: 'Dimapur', state: 'Nagaland', category: 'NIT' },
-  { name: 'National Institute of Technology Sikkim', shortName: 'NITS', city: 'Ravangla', state: 'Sikkim', category: 'NIT' },
-  { name: 'National Institute of Technology Arunachal Pradesh', shortName: 'NITAP', city: 'Yupia', state: 'Arunachal Pradesh', category: 'NIT' },
 
-  // --- IIITs & Central Institutes ---
-  { name: 'International Institute of Information Technology Hyderabad', shortName: 'IIITH', city: 'Hyderabad', state: 'Telangana', category: 'IIIT' },
-  { name: 'International Institute of Information Technology Bangalore', shortName: 'IIITB', city: 'Bengaluru', state: 'Karnataka', category: 'IIIT' },
-  { name: 'Indian Institute of Information Technology Allahabad', shortName: 'IIITA', city: 'Prayagraj', state: 'Uttar Pradesh', category: 'IIIT' },
-  { name: 'Indraprastha Institute of Information Technology Delhi', shortName: 'IIITD', city: 'New Delhi', state: 'Delhi', category: 'IIIT' },
-  { name: 'ABV-Indian Institute of Information Technology and Management Gwalior', shortName: 'IIITM Gwalior', city: 'Gwalior', state: 'Madhya Pradesh', category: 'IIIT' },
-  { name: 'Indian Institute of Science Bangalore (IISc)', shortName: 'IISc', city: 'Bengaluru', state: 'Karnataka', category: 'Central' },
-  { name: 'Birla Institute of Technology and Science Pilani (BITS Pilani)', shortName: 'BITS Pilani', city: 'Pilani', state: 'Rajasthan', category: 'Private' },
-  { name: 'BITS Pilani K.K. Birla Goa Campus', shortName: 'BITS Goa', city: 'Zuarinagar', state: 'Goa', category: 'Private' },
-  { name: 'BITS Pilani Hyderabad Campus', shortName: 'BITS Hyderabad', city: 'Hyderabad', state: 'Telangana', category: 'Private' },
-  { name: 'Delhi Technological University (DTU)', shortName: 'DTU', city: 'New Delhi', state: 'Delhi', category: 'State' },
-  { name: 'Netaji Subhas University of Technology (NSUT)', shortName: 'NSUT', city: 'New Delhi', state: 'Delhi', category: 'State' },
-  { name: 'Punjab Engineering College (PEC)', shortName: 'PEC', city: 'Chandigarh', state: 'Chandigarh', category: 'State' },
-  { name: 'College of Engineering Pune (COEP)', shortName: 'COEP', city: 'Pune', state: 'Maharashtra', category: 'State' },
-  { name: 'Veermata Jijabai Technological Institute (VJTI)', shortName: 'VJTI', city: 'Mumbai', state: 'Maharashtra', category: 'State' },
-  { name: 'RV College of Engineering (RVCE)', shortName: 'RVCE', city: 'Bengaluru', state: 'Karnataka', category: 'Private' },
-  { name: 'PSG College of Technology', shortName: 'PSG Tech', city: 'Coimbatore', state: 'Tamil Nadu', category: 'State' },
-  { name: 'Jadavpur University', shortName: 'JU', city: 'Kolkata', state: 'West Bengal', category: 'State' },
-  { name: 'Anna University Campus (CEG / MIT)', shortName: 'Anna Univ', city: 'Chennai', state: 'Tamil Nadu', category: 'State' },
-
-  // --- Central & Major Universities ---
+  // --- Other Major Indian Universities ---
   { name: 'University of Delhi (Delhi University - DU)', shortName: 'DU', city: 'New Delhi', state: 'Delhi', category: 'Central' },
-  { name: 'Shri Ram College of Commerce (SRCC - DU)', shortName: 'SRCC', city: 'New Delhi', state: 'Delhi', category: 'Central' },
-  { name: 'St. Stephen\'s College Delhi', shortName: 'St. Stephen\'s', city: 'New Delhi', state: 'Delhi', category: 'Central' },
+  { name: 'Shri Ram College of Commerce (SRCC - DU)', shortName: 'SRCC', city: 'New Delhi', state: 'Delhi', category: 'Degree' },
+  { name: 'St. Stephen\'s College Delhi', shortName: 'St. Stephen\'s', city: 'New Delhi', state: 'Delhi', category: 'Degree' },
   { name: 'Jawaharlal Nehru University (JNU)', shortName: 'JNU', city: 'New Delhi', state: 'Delhi', category: 'Central' },
   { name: 'Banaras Hindu University (BHU)', shortName: 'BHU', city: 'Varanasi', state: 'Uttar Pradesh', category: 'Central' },
-  { name: 'Aligarh Muslim University (AMU)', shortName: 'AMU', city: 'Aligarh', state: 'Uttar Pradesh', category: 'Central' },
-  { name: 'Jamia Millia Islamia (JMI)', shortName: 'JMI', city: 'New Delhi', state: 'Delhi', category: 'Central' },
-  { name: 'University of Mumbai', shortName: 'MU', city: 'Mumbai', state: 'Maharashtra', category: 'State' },
-  { name: 'Savitribai Phule Pune University (SPPU)', shortName: 'Pune Univ', city: 'Pune', state: 'Maharashtra', category: 'State' },
-  { name: 'University of Hyderabad (HCU)', shortName: 'UoH', city: 'Hyderabad', state: 'Telangana', category: 'Central' },
-  { name: 'Osmania University', shortName: 'OU', city: 'Hyderabad', state: 'Telangana', category: 'State' },
-  { name: 'Bangalore University', shortName: 'BU', city: 'Bengaluru', state: 'Karnataka', category: 'State' },
-  { name: 'University of Calcutta', shortName: 'CU', city: 'Kolkata', state: 'West Bengal', category: 'State' },
-  { name: 'Panjab University', shortName: 'PU', city: 'Chandigarh', state: 'Chandigarh', category: 'State' },
-  { name: 'Tezpur University', shortName: 'TU', city: 'Tezpur', state: 'Assam', category: 'Central' },
-
-  // --- Premier Medical Institutions ---
-  { name: 'All India Institute of Medical Sciences (AIIMS New Delhi)', shortName: 'AIIMS Delhi', city: 'New Delhi', state: 'Delhi', category: 'Medical' },
-  { name: 'AIIMS Bhopal', shortName: 'AIIMS Bhopal', city: 'Bhopal', state: 'Madhya Pradesh', category: 'Medical' },
-  { name: 'AIIMS Bhubaneswar', shortName: 'AIIMS BBS', city: 'Bhubaneswar', state: 'Odisha', category: 'Medical' },
-  { name: 'AIIMS Jodhpur', shortName: 'AIIMS Jodhpur', city: 'Jodhpur', state: 'Rajasthan', category: 'Medical' },
-  { name: 'JIPMER Puducherry', shortName: 'JIPMER', city: 'Puducherry', state: 'Puducherry', category: 'Medical' },
-  { name: 'Christian Medical College Vellore (CMC Vellore)', shortName: 'CMC Vellore', city: 'Vellore', state: 'Tamil Nadu', category: 'Medical' },
-  { name: 'King George\'s Medical University (KGMU)', shortName: 'KGMU', city: 'Lucknow', state: 'Uttar Pradesh', category: 'Medical' },
-  { name: 'Madras Medical College (MMC)', shortName: 'MMC', city: 'Chennai', state: 'Tamil Nadu', category: 'Medical' },
-
-  // --- Popular Private Universities & Colleges (Pan-India) ---
   { name: 'Vellore Institute of Technology (VIT Vellore)', shortName: 'VIT', city: 'Vellore', state: 'Tamil Nadu', category: 'Private' },
-  { name: 'VIT Chennai Campus', shortName: 'VIT Chennai', city: 'Chennai', state: 'Tamil Nadu', category: 'Private' },
   { name: 'SRM Institute of Science and Technology (SRM Kattankulathur)', shortName: 'SRM KTR', city: 'Chennai', state: 'Tamil Nadu', category: 'Private' },
   { name: 'Manipal Academy of Higher Education (MAHE Manipal)', shortName: 'Manipal', city: 'Manipal', state: 'Karnataka', category: 'Private' },
   { name: 'Amity University Noida', shortName: 'Amity Noida', city: 'Noida', state: 'Uttar Pradesh', category: 'Private' },
-  { name: 'Thapar Institute of Engineering and Technology', shortName: 'Thapar', city: 'Patiala', state: 'Punjab', category: 'Private' },
   { name: 'Kalinga Institute of Industrial Technology (KIIT)', shortName: 'KIIT', city: 'Bhubaneswar', state: 'Odisha', category: 'Private' },
   { name: 'Lovely Professional University (LPU)', shortName: 'LPU', city: 'Phagwara', state: 'Punjab', category: 'Private' },
-  { name: 'Chandigarh University (CU)', shortName: 'CU Punjab', city: 'Mohali', state: 'Punjab', category: 'Private' },
-  { name: 'Christ University Bengaluru', shortName: 'Christ Univ', city: 'Bengaluru', state: 'Karnataka', category: 'Private' },
-  { name: 'Symbiosis International University Pune', shortName: 'Symbiosis', city: 'Pune', state: 'Maharashtra', category: 'Private' },
-  { name: 'NMIMS University Mumbai', shortName: 'NMIMS', city: 'Mumbai', state: 'Maharashtra', category: 'Private' },
-  { name: 'PES University Bengaluru', shortName: 'PESU', city: 'Bengaluru', state: 'Karnataka', category: 'Private' },
-  { name: 'SASTRA Deemed University', shortName: 'SASTRA', city: 'Thanjavur', state: 'Tamil Nadu', category: 'Private' },
-  { name: 'Shiv Nadar University', shortName: 'SNU', city: 'Greater Noida', state: 'Uttar Pradesh', category: 'Private' },
-  { name: 'Ashoka University', shortName: 'Ashoka', city: 'Sonipat', state: 'Haryana', category: 'Private' },
-  { name: 'O.P. Jindal Global University', shortName: 'Jindal', city: 'Sonipat', state: 'Haryana', category: 'Private' },
-  { name: 'Nirma University', shortName: 'Nirma', city: 'Ahmedabad', state: 'Gujarat', category: 'Private' },
-  { name: 'Graphic Era University', shortName: 'Graphic Era', city: 'Dehradun', state: 'Uttarakhand', category: 'Private' },
-  { name: 'REVA University', shortName: 'REVA', city: 'Bengaluru', state: 'Karnataka', category: 'Private' },
-  { name: 'SRM University AP', shortName: 'SRM AP', city: 'Amaravati', state: 'Andhra Pradesh', category: 'Private' },
-  { name: 'IITM Janakpuri / IP University (GGSIPU Delhi)', shortName: 'IPU Delhi', city: 'New Delhi', state: 'Delhi', category: 'State' },
-  { name: 'Government College of Technology Coimbatore (GCT)', shortName: 'GCT', city: 'Coimbatore', state: 'Tamil Nadu', category: 'State' },
-  { name: 'College of Engineering Guindy (CEG Chennai)', shortName: 'CEG', city: 'Chennai', state: 'Tamil Nadu', category: 'State' },
 ];
+
