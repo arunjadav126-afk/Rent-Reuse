@@ -1,14 +1,18 @@
 # 🎓 Rent & Reuse — Campus Peer-to-Peer Sharing & Circular Economy Platform
 
+[![Live Demo](https://img.shields.io/badge/🚀_Live_App-rent--reuse.vercel.app-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://rent-reuse.vercel.app/)
 [![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)](https://reactjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?style=for-the-badge&logo=supabase)](https://supabase.com/)
 
+> 🔗 **Live Web Application**: [https://rent-reuse.vercel.app/](https://rent-reuse.vercel.app/)
+
 **Rent & Reuse** is a hyper-local, sustainability-focused campus platform designed for university students to share, rent, swap, donate, and repair academic gear, textbooks, lab equipment, electronics, and hostel essentials within a trusted college ecosystem.
 
 ---
+
 
 ## 🌟 Key Features
 
