@@ -130,6 +130,12 @@ export function Header({ onOpenPostItem, onOpenBulkList, onOpenActivity, onOpenA
                 >
                   தமிழ் (Tamil)
                 </button>
+                <button
+                  onClick={() => { setLanguage('te'); setShowLangDropdown(false); }}
+                  className={`w-full text-left px-3 py-1.5 text-xs font-medium hover:bg-slate-100 ${language === 'te' ? 'text-emerald-600 font-bold bg-emerald-50' : 'text-slate-700'}`}
+                >
+                  తెలుగు (Telugu)
+                </button>
               </div>
             )}
           </div>

@@ -16,7 +16,7 @@ export interface Profile {
   karma_points: number;
   trust_score: number; // 0 to 5.0
   is_verified: boolean;
-  language: 'en' | 'hi' | 'ta';
+  language: 'en' | 'hi' | 'ta' | 'te';
   vouches_count: number;
   role?: 'student' | 'fixer' | 'admin';
   college_name?: string;

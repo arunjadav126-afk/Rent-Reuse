@@ -1,4 +1,4 @@
-export type Language = 'en' | 'hi' | 'ta';
+export type Language = 'en' | 'hi' | 'ta' | 'te';
 
 export const TRANSLATIONS: Record<Language, Record<string, string>> = {
   en: {
@@ -138,5 +138,52 @@ export const TRANSLATIONS: Record<Language, Record<string, string>> = {
     pre_order: 'செமஸ்டர் இறுதியில் வெளியீடு',
     switch_user: 'பயனரை மாற்றுக (டெமோ)',
     vouched_by: 'சீனியர்களால் பரிந்துரைக்கப்பட்டது'
+  },
+  te: {
+    app_name: 'రెంట్ & రీయూజ్',
+    tagline: 'ఒక్క సెమిస్టర్ కోసం మాత్రమే అవసరమయ్యే వస్తువులను కొనేకండి. సీనియర్ల నుండి తీసుకోండి, ఉపయోగించండి!',
+    all_items: 'అన్ని వస్తువులు',
+    for_my_course: 'నా కోర్సు కోసం',
+    semester_handover: 'తరువాతి సెమిస్టర్',
+    bundles: 'బండిల్స్ & కిట్స్',
+    wanted_board: 'కావాల్సిన వస్తువుల బోర్డు',
+    groups: 'క్యాంపస్ గ్రూప్స్',
+    my_activity: 'నా యాక్టివిటీ',
+    impact_stats: 'ఇంపాక్ట్ & లీడర్‌బోర్డ్',
+    admin_panel: 'అడ్మిన్ సెల్',
+    search_placeholder: 'మిని డ్రాఫ్టర్, సైంటిఫిక్ కాలిక్యులేటర్, ల్యాబ్ కోట్, సైకిల్ సెర్చ్ చేయండి...',
+    all_categories: 'అన్ని కేటగిరీలు',
+    all_modes: 'అన్ని రకాలు',
+    free_borrow: 'ఉచితం / అప్పు',
+    rent: 'అద్దె (Rent)',
+    swap: 'మార్పిడి (Swap)',
+    donate: 'దానం / ఉచితంగా ఇవ్వడం',
+    filter_by_dept: 'డిపార్ట్‌మెంట్',
+    filter_by_year: 'సంవత్సరం',
+    condition_new: 'కొత్తదిలా ఉంది',
+    condition_good: 'బాగుంది',
+    condition_fair: 'నడుస్తుంది',
+    post_item: 'వస్తువును జోడించండి',
+    bulk_list: 'గ్రాడ్యుయేట్ అవుతున్నారా? బల్క్ లిస్ట్',
+    suggested_price: 'సూచించిన అద్దె',
+    pickup_point: 'సేఫ్ పికప్ పాయింట్',
+    request_to_borrow: 'అప్పుగా అడగండి',
+    pre_book_next_sem: 'తరువాతి సెమ్ కోసం ప్రీ-బుక్ చేయండి',
+    instant_chat: 'ఓనర్‌తో చాట్ చేయండి',
+    qr_handover: 'QR హ్యాండోవర్',
+    karma_balance: 'కర్మా పాయింట్స్',
+    trust_score: 'ట్రస్ట్ స్కోర్',
+    verified_student: 'వెరిఫైడ్ స్టూడెంట్',
+    money_saved: 'ఆదా చేసిన డబ్బు',
+    items_reused: 'రీయూజ్ చేసిన వస్తువులు',
+    co2_avoided: 'తగ్గించిన CO2',
+    per_day: '/రోజుకు',
+    deposit: 'రిఫండబుల్ డిపాజిట్',
+    on_loan: 'ప్రస్తుతం అద్దెలో ఉంది',
+    available: 'లభ్యంగా ఉంది',
+    pre_order: 'సెమ్ చివరలో లభిస్తుంది',
+    switch_user: 'స్టూడెంట్‌ను మార్చండి (డెమో రోల్)',
+    vouched_by: 'సీనియర్లు రికమండ్ చేశారు'
   }
 };
+

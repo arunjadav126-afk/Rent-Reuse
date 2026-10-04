@@ -115,7 +115,7 @@ export function ProfileModal({ onClose, onOpenActivity }: ProfileModalProps) {
                 Preferred Language:
               </span>
               <div className="flex gap-1">
-                {(['en', 'hi', 'ta'] as Language[]).map(l => (
+                {(['en', 'hi', 'ta', 'te'] as Language[]).map(l => (
                   <button
                     key={l}
                     onClick={() => setLanguage(l)}

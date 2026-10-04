@@ -51,7 +51,7 @@
 - **Student Savings Index**: Cumulative financial savings ($₹$) achieved by borrowing instead of purchasing new items.
 
 ### 🌐 9. Multilingual Accessibility
-- Full internationalization support: **English**, **Hindi (हिन्दी)**, and **Tamil (தமிழ்)**.
+- Full internationalization support: **English**, **Hindi (हिन्दी)**, **Tamil (தமிழ்)**, and **Telugu (తెలుగు)**.
 
 ---
 
@@ -137,11 +137,14 @@ rent-and-reuse/
 │   │   ├── Header.tsx
 │   │   ├── ImpactDashboardView.tsx
 │   │   ├── ItemCard.tsx
+│   │   ├── LocationModal.tsx
 │   │   ├── PostItemModal.tsx
+│   │   ├── ProfileModal.tsx
 │   │   ├── QRHandoverModal.tsx
 │   │   └── WantedBoardView.tsx
-│   └── lib/               # Utility functions, Supabase client, i18n, mock data, TypeScript types
-│       ├── i18n.ts
+│   └── lib/               # Utility functions, Supabase client, i18n, colleges dataset, mock data
+│       ├── colleges.ts    # Indian Colleges & Universities Dataset (Pan-India)
+│       ├── i18n.ts        # Multilingual Internationalization (EN, HI, TA, TE)
 │       ├── mockData.ts
 │       ├── store.tsx
 │       ├── supabase.ts
@@ -155,4 +158,5 @@ rent-and-reuse/
 ## 📜 License
 
 Distributed under the MIT License. See `LICENSE` for more information.
+
 
