@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useApp } from '@/lib/store';
 import { X, ShieldCheck, Mail, Lock, User, GraduationCap, Building2, Globe, Sparkles, CheckCircle2, AlertCircle } from 'lucide-react';
 import { Language } from '@/lib/i18n';
+import { ALL_INDIAN_COLLEGES } from '@/lib/colleges';
 
 interface AuthModalProps {
   initialMode?: 'signin' | 'signup';
@@ -20,7 +21,10 @@ const DEPARTMENTS = [
   'Biotechnology & Biochemical',
   'Aerospace & Ocean Engineering',
   'Physics & Chemistry Sciences',
-  'Management & Humanities'
+  'Management & Humanities',
+  'Medicine & Health Sciences',
+  'Commerce & Economics',
+  'Arts & Design'
 ];
 
 const HOSTELS = [
@@ -40,6 +44,8 @@ export function AuthModal({ initialMode = 'signin', onClose }: AuthModalProps) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [fullName, setFullName] = useState('');
+  const [selectedCollege, setSelectedCollege] = useState(ALL_INDIAN_COLLEGES[0].name);
+  const [customCollegeInput, setCustomCollegeInput] = useState('');
   const [department, setDepartment] = useState(DEPARTMENTS[0]);
   const [year, setYear] = useState<number>(1);
   const [hostel, setHostel] = useState(HOSTELS[0]);
@@ -49,15 +55,10 @@ export function AuthModal({ initialMode = 'signin', onClose }: AuthModalProps) {
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
 
-  // Validate college email domain
-  const isCollegeEmail = (emailStr: string) => {
+  // Accept any valid email from all colleges in India
+  const isValidEmail = (emailStr: string) => {
     const clean = emailStr.trim().toLowerCase();
-    return clean.includes('@') && (
-      clean.endsWith('.edu') ||
-      clean.endsWith('.ac.in') ||
-      clean.endsWith('@campus.edu') ||
-      clean.includes('.campus.')
-    );
+    return clean.includes('@') && clean.includes('.');
   };
 
   const handleSignIn = (e: React.FormEvent) => {
@@ -65,7 +66,7 @@ export function AuthModal({ initialMode = 'signin', onClose }: AuthModalProps) {
     setError(null);
 
     if (!email.trim() || !password.trim()) {
-      setError('Please provide your college email and password.');
+      setError('Please provide your student email and password.');
       return;
     }
 
@@ -85,12 +86,12 @@ export function AuthModal({ initialMode = 'signin', onClose }: AuthModalProps) {
     setError(null);
 
     if (!fullName.trim()) {
-      setError('Please enter your full name.');
+      setError('Please enter your full student name.');
       return;
     }
 
-    if (!isCollegeEmail(email)) {
-      setError('Must use a verified college email (e.g. rollno@campus.edu or @*.ac.in). General emails like @gmail.com are not permitted for campus safety.');
+    if (!isValidEmail(email)) {
+      setError('Please enter a valid email address.');
       return;
     }
 
@@ -99,12 +100,16 @@ export function AuthModal({ initialMode = 'signin', onClose }: AuthModalProps) {
       return;
     }
 
+    const collegeName = selectedCollege === 'OTHER_CUSTOM'
+      ? (customCollegeInput.trim() || 'Indian College')
+      : selectedCollege;
+
     const hostelFull = roomNumber.trim() ? `${hostel} (Room ${roomNumber.trim()})` : hostel;
 
     const res = register({
       full_name: fullName.trim(),
       college_email: email.trim().toLowerCase(),
-      department,
+      department: `${department} (${collegeName})`,
       year,
       hostel: hostelFull,
       language
@@ -126,16 +131,21 @@ export function AuthModal({ initialMode = 'signin', onClose }: AuthModalProps) {
         {/* Header */}
         <div className="p-4 px-6 border-b border-slate-100 flex items-center justify-between bg-slate-50">
           <div>
-            <h3 className="text-base font-extrabold text-slate-900">
-              {mode === 'signin' ? 'Sign In to Campus Account' : 'Student Registration'}
-            </h3>
+            <div className="flex items-center gap-2">
+              <h3 className="text-base font-extrabold text-slate-900">
+                {mode === 'signin' ? 'Sign In to Campus Account' : 'Student Registration (All India)'}
+              </h3>
+              <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[9px] font-extrabold uppercase">
+                India Wide
+              </span>
+            </div>
             <p className="text-xs text-slate-500">
-              {mode === 'signin' ? 'Access your borrowings, gear, and karma' : 'Institutional college verification required'}
+              {mode === 'signin' ? 'Access your borrowings, gear, and karma' : 'Open to students from all colleges & universities in India'}
             </p>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-200 rounded-full transition-colors"
+            className="p-1.5 text-slate-400 hover:text-slate-700 hover:bg-slate-200 rounded-full transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -184,13 +194,13 @@ export function AuthModal({ initialMode = 'signin', onClose }: AuthModalProps) {
             )}
 
             <div>
-              <label className="text-xs font-bold text-slate-700 block mb-1">College Email Address</label>
+              <label className="text-xs font-bold text-slate-700 block mb-1">Student Email Address</label>
               <div className="relative">
                 <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
                   type="email"
                   required
-                  placeholder="e.g. your_name@campus.edu or rollno@college.ac.in"
+                  placeholder="e.g. student@college.ac.in or email@gmail.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full text-xs pl-9 pr-3 py-2.5 rounded-xl border border-slate-300 focus:outline-emerald-500"
@@ -232,7 +242,7 @@ export function AuthModal({ initialMode = 'signin', onClose }: AuthModalProps) {
           </form>
         ) : (
           /* Sign Up / Registration Form */
-          <form onSubmit={handleSignUp} className="p-6 space-y-3.5 overflow-y-auto">
+          <form onSubmit={handleSignUp} className="p-6 space-y-3 overflow-y-auto">
             {error && (
               <div className="p-3 rounded-xl bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-start gap-2">
                 <AlertCircle className="w-4 h-4 shrink-0 mt-0.5" />
@@ -257,21 +267,56 @@ export function AuthModal({ initialMode = 'signin', onClose }: AuthModalProps) {
 
             <div>
               <label className="text-xs font-bold text-slate-700 block mb-1">
-                College Email (*.edu / *.ac.in) *
+                Select Your College / University (All India) *
+              </label>
+              <div className="relative">
+                <Building2 className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <select
+                  value={selectedCollege}
+                  onChange={(e) => setSelectedCollege(e.target.value)}
+                  className="w-full text-xs pl-9 pr-3 py-2 rounded-xl border border-slate-300 bg-white focus:outline-emerald-500 truncate"
+                >
+                  {ALL_INDIAN_COLLEGES.map((c, i) => (
+                    <option key={i} value={c.name}>
+                      {c.name} ({c.city}, {c.state})
+                    </option>
+                  ))}
+                  <option value="OTHER_CUSTOM">+ Other / Enter My College Name</option>
+                </select>
+              </div>
+            </div>
+
+            {selectedCollege === 'OTHER_CUSTOM' && (
+              <div>
+                <label className="text-xs font-bold text-slate-700 block mb-1">Enter College Name *</label>
+                <input
+                  type="text"
+                  required
+                  placeholder="e.g. St. Xavier's College, Kolkata"
+                  value={customCollegeInput}
+                  onChange={(e) => setCustomCollegeInput(e.target.value)}
+                  className="w-full text-xs p-2 rounded-xl border border-slate-300 focus:outline-emerald-500"
+                />
+              </div>
+            )}
+
+            <div>
+              <label className="text-xs font-bold text-slate-700 block mb-1">
+                Student Email Address *
               </label>
               <div className="relative">
                 <Mail className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
                 <input
                   type="email"
                   required
-                  placeholder="rollno@campus.edu or student@nit.ac.in"
+                  placeholder="rollno@college.ac.in or student@gmail.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full text-xs pl-9 pr-3 py-2 rounded-xl border border-slate-300 focus:outline-emerald-500"
                 />
               </div>
               <p className="text-[10px] text-slate-400 mt-1">
-                Zero PII leak: Your email and phone are never displayed publicly.
+                All Indian college emails (`.ac.in`, `.edu.in`, `.edu`, `.in`) are accepted.
               </p>
             </div>
 
@@ -321,7 +366,7 @@ export function AuthModal({ initialMode = 'signin', onClose }: AuthModalProps) {
 
             <div className="grid grid-cols-2 gap-3">
               <div>
-                <label className="text-xs font-bold text-slate-700 block mb-1">Hostel Block</label>
+                <label className="text-xs font-bold text-slate-700 block mb-1">Hostel / Campus Zone</label>
                 <select
                   value={hostel}
                   onChange={(e) => setHostel(e.target.value)}
@@ -345,22 +390,9 @@ export function AuthModal({ initialMode = 'signin', onClose }: AuthModalProps) {
               </div>
             </div>
 
-            <div>
-              <label className="text-xs font-bold text-slate-700 block mb-1">Preferred UI Language</label>
-              <select
-                value={language}
-                onChange={(e) => setLanguage(e.target.value as Language)}
-                className="w-full text-xs p-2 rounded-xl border border-slate-300 bg-white focus:outline-emerald-500"
-              >
-                <option value="en">English</option>
-                <option value="hi">हिंदी (Hindi)</option>
-                <option value="ta">தமிழ் (Tamil)</option>
-              </select>
-            </div>
-
             <div className="p-3 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center gap-2 text-xs text-emerald-900">
               <Sparkles className="w-4 h-4 text-emerald-600 shrink-0" />
-              <span>Registration grants you <strong>+30 Starter Karma points</strong> and verifiable campus badge.</span>
+              <span>Registration grants you <strong>+30 Starter Karma points</strong> and verifiable student badge.</span>
             </div>
 
             <button
@@ -375,3 +407,4 @@ export function AuthModal({ initialMode = 'signin', onClose }: AuthModalProps) {
     </div>
   );
 }
+
